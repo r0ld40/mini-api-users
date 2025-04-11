@@ -1,11 +1,13 @@
 import { Router } from 'express';
+import User from './app/controllers/users';
 
-const routes = new Router();
+const route = new Router();
 
-routes.get('/', (req, res) => {
-  return res.json({
-    message: 'Hello World ajsndjkabsdjkabs',
-  });
-});
+route.get('/', User.getUsers);
+route.get('/:id', User.getOneUser);
 
-export default routes;
+route.post('/', User.createUser);
+
+route.delete('/:id', User.deleteUser);
+
+export default route;

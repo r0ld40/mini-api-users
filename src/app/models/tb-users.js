@@ -11,7 +11,10 @@ class User extends Model {
           autoIncrement: true,
         },
         name: Sequelize.STRING,
-        email: Sequelize.STRING,
+        email: {
+          type: Sequelize.STRING,
+          unique: true,
+        },
         date_birth: Sequelize.DATE,
         createdAt: Sequelize.DATE,
         updatedAt: Sequelize.DATE,
@@ -20,7 +23,7 @@ class User extends Model {
       },
       {
         sequelize,
-        freezeTableName: 'users',
+        freezeTableName: true,
         tableName: 'users',
       }
     );

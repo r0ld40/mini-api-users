@@ -1,6 +1,6 @@
-import User from '@/app/models/tb-users';
 import { Sequelize } from 'sequelize';
 import dbconfig from '../config/database';
+import User from '../app/models/tb-users';
 
 const models = [User];
 
